@@ -24,6 +24,11 @@ header {
 
 }
 
+.estrelas img {
+    height: 30px;
+    width: 50px;
+}
+
 .categorias {
     display: flex;
     flex-direction: row;
