@@ -179,7 +179,7 @@ header button {
 .todosEpisodios {
     display: flex;
     animation: slidesInfinitos 25s linear infinite;
-    transition: none;
+    transition: linear ease-in-out 3s;
     width: 500%;
 }
 
