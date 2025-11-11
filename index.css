@@ -8,49 +8,114 @@
 
 body,
 html {
+    font-family: "Arimo", sans-serif;
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: linear-gradient(to bottom right, rgb(80, 143, 104), rgb(103, 189, 101));
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
-header {
+header nav {
+    background-color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 10px;
+}
 
+header a {
+    color: green;
+}
+
+header button {
+    background-color: rgb(255, 147, 189);
+    color: rgb(255, 255, 255);
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px;
+    width: 110px;
+    cursor: pointer;
+}
+
+.dadosSerie h1,
+.dadosSerie p {
+    padding: 15px;
+}
+
+.pesquisa {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.pesquisa img {
+    height: 20px;
+    width: 20px;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
 }
 
 .estrelas img {
-    height: 30px;
-    width: 50px;
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
 }
 
 .categorias {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 10px;
     background-color: white;
     color: black;
+    overflow: auto;
+    flex-wrap: nowrap;
+}
+
+.categorias nav {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias a {
+    flex-shrink: 0;
+    padding: 5px 15px;
+    color: black;
+    white-space: nowrap;
+}
+
+.categorias a:hover {
+    flex-shrink: 0;
+    padding: 5px 15px;
+    color: black;
+    white-space: nowrap;
+    text-decoration: underline;
 }
 
 .seriePrincipal {
+    background-image: linear-gradient(to bottom right, rgb(15, 41, 25), rgb(130, 211, 128));
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
     justify-content: space-between;
     padding: 50px;
+    gap: 30px;
 }
 
-.seriePrincipal img {
+.capaSerie img {
     width: 300px;
     height: 400px;
+    object-fit: cover;
+    display: block;
 }
 
 .dadosSerie {
@@ -61,6 +126,7 @@ header {
 }
 
 .temporadaDois {
+    background-image: linear-gradient(to top right, rgb(15, 41, 25), rgb(130, 211, 128));
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -69,35 +135,151 @@ header {
     padding: 50px;
 }
 
+.temporadaDois h2,
+.temporadaDois p {
+    padding: 10px;
+}
+
+.trailerS2 iframe{
+    flex-shrink: 0;
+    width: 500px;
+    height: 315px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+
 .botoes {
+    background-color: rgb(15, 41, 25);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 10px;
+}
+
+.botoes button {
+    background-color: rgb(45, 91, 16);
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px;
+    width: 110px;
+    cursor: pointer;
 }
 
 .episodios {
+    background-color: rgb(15, 41, 25);
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    padding: 0 10px;
+    position: relative;
+    overflow: hidden;
 }
- 
+
+.todosEpisodios {
+    display: flex;
+    animation: slidesInfinitos 25s linear infinite;
+    transition: none;
+    width: 500%;
+}
+
+.cardEpisodios {
+    z-index: 1;
+    width: 20%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-right: 15px;
+}
+
 .cardEpisodios img {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.identificador {
+    position: absolute;
+    z-index: 2;
+    background-color: rgb(2, 45, 3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    align-content: center;
+    text-align: center;
+    width: 25%;
 
 }
+
+@keyframes slidesInfinitos {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
 
 .outrasSeries {
+    background-color: rgb(15, 41, 25);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    overflow: hidden;
+    padding: 0 10px;
+    gap: 15px;
+}
+
+.outrasSeries img {
+    flex-shrink: 0;
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.botoesPrincipais {
+    margin-top: 40px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px
+}
+
+.botaoPlay button {
+    background-color: rgb(131, 181, 100);
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px;
+    width: 110px;
+    cursor: pointer;
+}
+
+.botaoWatch button {
+    background-color: rgb(255, 138, 177);
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 20px;
+    padding: 5px;
+    width: 110px;
+    cursor: pointer;
 }
 
 footer {
     position: fixed;
-    height: 10%;
+    height: 8%;
     width: 100%;
-    background-color: rgb(175, 229, 184);
+    background-color: rgb(4, 50, 12);
     left: 0;
     bottom: 0;
     margin-top: auto;
@@ -111,9 +293,185 @@ footer {
     justify-content: space-between;
 }
 
-@media (max-width=600px) {
-    header {
+.footer img {
+    height: 20px;
+    width: 20px;
+}
+
+
+
+@media (max-width: 900px) {
+
+    .seriePrincipal {
+        padding: 30px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 770px) {
+    header nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .pesquisa {
+        order: 1;
+    }
+
+    .seriePrincipal {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .capaSerie img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .dadosSerie {
+        align-items: center;
+    }
+
+    .temporadaDois {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .temporadaDois h2 {
+        margin-bottom: 15px;
+    }
+
+    .botoes {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .categorias nav {
         display: flex;
         flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
     }
+
+    .categorias a {
+        flex-shrink: 0;
+        padding: 5px 15px;
+        color: black;
+        white-space: nowrap;
+    }
+
+    .botoesPrincipais {
+        justify-content: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+
+    .cardEpisodios {
+        width: 33%;
+    }
+
+    .cardEpisodios img {
+        max-width: 200px;
+        height: auto;
+    }
+
+    .outrasSeries {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .outrasSeries iframe {
+        width: 500px;
+        height: auto;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 5px;
+    }
+
+
+    .estrelas img {
+        height: 60px;
+        width: 90px;
+    }
+
+
+    .botoesPrincipais {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+    .cardEpisodios {
+        width: 50%;
+    }
+
+    .cardEpisodios img {
+        max-width: 130px;
+        height: auto;
+    }
+
+    .outrasSeries img {
+        width: 100px;
+        height: auto;
+    }
+
+    .categorias nav {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .categorias a {
+        flex-shrink: 0;
+        padding: 5px 15px;
+        color: black;
+        white-space: nowrap;
+    }
+
+    .outrasSeries {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .outrasSeries iframe {
+        width: 150px;
+        height: auto;
+    }
+
+    footer {
+        padding: 5px;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .trailerS2 iframe{
+    flex-shrink: 0;
+    width: 150px;
+    height: auto;
+    object-fit: cover;
+    overflow: hidden;
+}
 }
